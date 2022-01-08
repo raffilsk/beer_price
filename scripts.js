@@ -3,22 +3,27 @@ const element = document.getElementById("root");
 function container(){
    return `
    ${header()}
-   <form onchange="calc()">
-            <label for="">ML</label>
-            <input type="number" name="" id="mlColumn1" value="269" >
+    <div id="container" onchange="calc()">
+        <div id="column1">        
+                    <label for="">ML</label>
+                    <input type="number" name="" id="mlColumn1" value="269" >
 
-            <label for="">Preço</label>
-            <input type="number" name="" id="priceColumn1" value="">
+                    <label for="">Preço</label>
+                    <input type="number" name="" id="priceColumn1" value="">
 
-            <label for="">ML</label>
-            <input type="number" name="" id="mlColumn2" value="350" >
+                    <div id="result1"></div>
+            </div>
+            <div id="column2">
+                    <label for="">ML</label>
+                    <input type="number" name="" id="mlColumn2" value="350" >
 
-            <label for="">Preço</label>
-            <input type="number" name="" id="priceColumn2" value="">
-    </form>
+                    <label for="">Preço</label>
+                    <input type="number" name="" id="priceColumn2" value="">
 
-    <div id="result1"></div>
-    <div id="result2"></div>
+                    <div id="result2"></div>
+            </div>
+
+    </div>
    `
 }
 
@@ -42,8 +47,17 @@ function calc(){
    let total1 = price1 * (1000/ml1)
    let total2 = price2 * (1000/ml2)
 
-   let result1 = document.getElementById("result1").innerHTML = total1
-   let result2 = document.getElementById("result2").innerHTML = total2
+   let result1 = document.getElementById("result1").innerHTML = total1.toFixed(2)
+   let result2 = document.getElementById("result2").innerHTML = total2.toFixed(2)
+
+   if(result1 < result2){
+    document.getElementById("result1").style.border = "1px solid green";
+    document.getElementById("result2").style.border = "0px";
+   }
+   else{
+    document.getElementById("result2").style.border = "1px solid green";
+    document.getElementById("result1").style.border = "0px";
+   }
   
 
    return result1 + result2
