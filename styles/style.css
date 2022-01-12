@@ -60,6 +60,7 @@ header {
   width: 200px;
   height: 50px;
   font-size: 2rem;
+  padding-left: 0.5rem;
   border-radius: 0.5rem;
 }
 
@@ -67,6 +68,7 @@ header {
 #container #column2 label {
   width: 200px;
   margin: 15px 0 5px 0;
+  padding-left: 0.5rem;
 }
 
 #container #result1,
